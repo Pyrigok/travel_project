@@ -6,9 +6,9 @@ function initAlbumSelector() {
 		var album = $(this).find('input').val();
 	
 		if (album) {
-			$.cookie('current_album', album, {'path': '/album', 'expires': 365});
+			$.cookie('current_album', album, {'path': '/', 'expires': 365});
 		} else {
-			$.removeCookie('current_album', {'path': '/album'});
+			$.removeCookie('current_album', {'path': '/'});
 		}
 
 		return true;

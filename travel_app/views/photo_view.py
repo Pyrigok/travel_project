@@ -78,7 +78,7 @@ def add_photo(request):
 					return HttpResponseRedirect(u'%s?status_message=Додавання фото скасоване!' %(reverse('add_photo')))
 
 			else:
-				return render (request, 'add_photo.html')
+				return render (request, 'add_photo.html', {})
 		else:
 			return HttpResponseRedirect (u'%s?status_message=Фото може додати тільки автор даного альбому!' %(reverse('show_photo')))
 
