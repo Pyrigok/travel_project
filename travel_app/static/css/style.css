@@ -236,7 +236,7 @@ p {
   font-size: 18px;
   border: none;
   border-bottom: 1px solid #264d00; }
-  .data_input :focus {
+  .data_input:focus {
     border: none;
     border-bottom: 1px solid #264d00;
     outline: none; }
@@ -250,7 +250,7 @@ p {
   transform: translateY(-25px);
   border: none;
   border-bottom: 1px solid #264d00; }
-  .data_input_description :focus {
+  .data_input_description:focus {
     border: none;
     border-bottom: 1px solid #264d00;
     outline: none; }
@@ -325,7 +325,7 @@ p {
   font-size: 18px;
   border: none;
   border-bottom: 1px solid #264d00; }
-  .data_input_respond :focus {
+  .data_input_respond:focus {
     border-bottom: 1px solid #264d00;
     outline: none; }
 
@@ -388,7 +388,7 @@ p {
 
 #close_description {
   transform: scale(4); }
-  #close_description :hover {
+  #close_description:hover {
     transition: 2sec;
     transform: rotate(1 turn); }
 

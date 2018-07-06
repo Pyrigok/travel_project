@@ -316,7 +316,7 @@ p{
 	font-size: 18px;
 	border: none;
 	border-bottom: 1px solid $base_green;
-	:focus {
+	&:focus {
 	border: none;
 	border-bottom: 1px solid $base_green;	
 	outline: none;
@@ -332,7 +332,7 @@ p{
 	transform: translateY(-25px);
 	border: none;
 	border-bottom: 1px solid $base_green;
-	:focus {
+	&:focus {
 	border: none;
 	border-bottom: 1px solid $base_green;	
 	outline: none;
@@ -428,7 +428,7 @@ p{
 	font-size: 18px;
 	border: none;
 	border-bottom: 1px solid $base_green;
-	:focus{
+	&:focus{
 	border-bottom: 1px solid $base_green;
 	outline: none;
 	}
@@ -510,7 +510,7 @@ p{
 
 #close_description{
 	transform: scale(4);
-	:hover{
+	&:hover{
 		transition: 2sec;
 		transform: rotate(1 turn);
 
