@@ -12,7 +12,7 @@
 						id='plan_trip_form'>
 							{% csrf_token %}
 						
-					<div class="row r1">
+					<div class="row r">
 						<div class=" {% if errors.trip_point %}has-error{% endif %}">
 							<span class="help-block">
 							<label for="trip_point_input"
@@ -29,7 +29,7 @@
 						</div>
 					</div>
 
-					<div class="row r2">
+					<div class="row r">
 						<div class=" {% if errors.trip_description %}has-error{% endif %}">
 							<span class="help-block">
 							<label for="trip_description_input"
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 
-					<div class="row r3">
+					<div class="row r">
 						<div class=" {% if errors.number_of_seats %}has-error{% endif %}">
 							<span class="help-block">
 							<label for="number_of_seats_input"
@@ -67,7 +67,7 @@
 						</div>
 					</div>
 
-					<div class="row r4">
+					<div class="row r">
 						<div class=" {% if errors.departure_date %}has-error{% endif %}" style="position: relative;">
 							<span class="help-block">
 							<label for="departure_date_input"
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 
-					<div class="row r5">
+					<div class="row r">
 						<div class=" {% if errors.date_of_arrival %}has-error{% endif %}"
 						style="position: relative;">
 							<span class="help-block">
@@ -103,7 +103,7 @@
 						</div>
 					</div>
 
-					<div class="row r6" style="margin-top: 30px;">
+					<div class="row r" style="margin-top: 30px;">
 						<button class="my_btn"
 							name="send_button"
 							type="submit">

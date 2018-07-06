@@ -64,7 +64,7 @@ header{
 	color: white;
 	background-color: black;
 	border-radius: 1px;
-	:hover{
+	&:hover{
 	background-color: green;
 	color: white;
 	text-decoration: none;
@@ -107,6 +107,11 @@ header{
 a:focus{
 	text_decoration:none;
 	color: $base_blue;
+}
+
+.r, .r1, .r2, .r3, .r4, .r5, .r6{
+	/*display: none;*/
+	margin-bottom: 33px;
 }
 
 #about_site_info{
@@ -171,11 +176,11 @@ p{
 	background-color: transparent;
 	border: none;
 	font-family: $pacifico;
-	:hover{
+	&:hover{
 		color: $base_green;
 		outline: none;
 	}	
-	:active{
+	&:active{
 	outline: none;
 	text-decoration: none;
 	}
@@ -188,7 +193,7 @@ p{
 	border: none;
 	font-family: $pacifico;
 	font-style: italic;
-	:hover{
+	&:hover{
 		color: $base_green;
 		outline: none;
 	}	
@@ -298,11 +303,6 @@ p{
 	
 }
 
-.r1, .r2, .r3, .r4, .r5, .r6{
-	/*display: none;*/
-	margin-bottom: 33px;
-
-}
 /***/
 
 
@@ -410,16 +410,17 @@ p{
 
 /* add_respond_page */
 
+.respond_position{
+	position: absolute;
+	top: 200px;
+}
+
 #label_textarea{
 	position: absolute;
 	transition: translateY(100px);
 
 }
 
-#label_datepicker{
-	position: absolute;
-	transition: translateY(-20px);
-}
 .data_input_respond {
 	transition: translateY(-20px);
 	background-color: transparent;
@@ -531,19 +532,22 @@ p{
 /* to_join_the_trip_page */
 
 #to_join_form{
-	display: none;
-	
+	display: none;	
+}
+
+.member_list{
+	overflow: scroll;
+	height: 150px;
+}
+
+.member_item{
+	margin: 2px;	
 }
 
 .trip_info{
 	font-family: $open_sans;
 	color: $base_green;
 }
-
-.p_trip_info{
-	text-alight: right;
-}
-
 
 
 /***/

@@ -43,7 +43,7 @@ header {
   color: white;
   background-color: black;
   border-radius: 1px; }
-  .main_logo :hover {
+  .main_logo:hover {
     background-color: green;
     color: white;
     text-decoration: none;
@@ -80,6 +80,10 @@ header {
 a:focus {
   text_decoration: none;
   color: #005c99; }
+
+.r, .r1, .r2, .r3, .r4, .r5, .r6 {
+  /*display: none;*/
+  margin-bottom: 33px; }
 
 #about_site_info {
   display: none;
@@ -132,10 +136,10 @@ p {
   background-color: transparent;
   border: none;
   font-family: "Pacifico", cursive; }
-  .my_btn :hover {
+  .my_btn:hover {
     color: #264d00;
     outline: none; }
-  .my_btn :active {
+  .my_btn:active {
     outline: none;
     text-decoration: none; }
 
@@ -146,7 +150,7 @@ p {
   border: none;
   font-family: "Pacifico", cursive;
   font-style: italic; }
-  .my_btn_link :hover {
+  .my_btn_link:hover {
     color: #264d00;
     outline: none; }
   .my_btn_link :active {
@@ -221,10 +225,6 @@ p {
 
 /* *** */
 /*add_travel_page*/
-.r1, .r2, .r3, .r4, .r5, .r6 {
-  /*display: none;*/
-  margin-bottom: 33px; }
-
 /***/
 /*input_form*/
 .data_input {
@@ -310,13 +310,13 @@ p {
 
 /***/
 /* add_respond_page */
+.respond_position {
+  position: absolute;
+  top: 200px; }
+
 #label_textarea {
   position: absolute;
   transition: translateY(100px); }
-
-#label_datepicker {
-  position: absolute;
-  transition: translateY(-20px); }
 
 .data_input_respond {
   transition: translateY(-20px);
@@ -402,12 +402,16 @@ p {
 #to_join_form {
   display: none; }
 
+.member_list {
+  overflow: scroll;
+  height: 150px; }
+
+.member_item {
+  margin: 2px; }
+
 .trip_info {
   font-family: "Open Sans", sans-serif;
   color: #264d00; }
-
-.p_trip_info {
-  text-alight: right; }
 
 /***/
 /* plan_trip_page */
