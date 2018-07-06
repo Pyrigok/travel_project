@@ -1,0 +1,420 @@
+@charset "UTF-8";
+/* fonts */
+@import url("https://fonts.googleapis.com/css?family=Pacifico&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300|Tangerine");
+/* colors */
+/* *** */
+/* base_page */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 10px;
+  box-shadow: 0px 1px 10px 3px #264d00; }
+
+.banner {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+
+.nav {
+  position: relative;
+  top: 1;
+  left: 0;
+  right: 0;
+  z-index: 99; }
+
+.base_content {
+  position: relative;
+  top: 0;
+  padding-top: 130px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  z-index: 1; }
+
+.main_logo {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-weight: 100;
+  color: white;
+  background-color: black;
+  border-radius: 1px; }
+  .main_logo :hover {
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    transition: all 1.2s;
+    box-shadow: inset 8px -2px 40px 2px #264d00; }
+
+.main_logo_mini {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-weight: 100;
+  color: white;
+  background-color: black;
+  border-radius: 1px; }
+
+.a {
+  font-weight: 50;
+  display: inline;
+  z-index: 100;
+  font-family: "Open Sans", sans-serif;
+  color: #0d1a00; }
+  .a:hover {
+    text-align: center;
+    text-decoration: none;
+    /*font-weight: 700;
+    box-shadow:inset -5px 0px 20px 3px $base_green;*/
+    font-weight: 100;
+    border-radius: 5px;
+    color: white;
+    transition: all 1.2s;
+    cursor: pointer;
+    box-shadow: inset -5px 0px 20px 3px black;
+    z-index: 999; }
+
+a:focus {
+  text_decoration: none;
+  color: #005c99; }
+
+#about_site_info {
+  display: none;
+  position: relative;
+  top: 130px;
+  left: 25px;
+  right: 25px; }
+
+.respond_title {
+  font-family: "Pacifico", cursive;
+  font-style: italic;
+  font-weight: 100; }
+
+footer {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px -1px 10px 3px #264d00;
+  background-color: #ecf9f2;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  color: black; }
+
+.p_message {
+  text-align: center;
+  color: #005c99; }
+
+.p_text {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif; }
+
+.hr {
+  box-shadow: 0px 0px 7px 1px #264d00;
+  margin-top: 5px; }
+
+input:active {
+  border: none;
+  outline: none;
+  text-decoration: none; }
+
+p {
+  text-align: center; }
+
+.my_btn {
+  display: inline;
+  color: black;
+  background-color: transparent;
+  border: none;
+  font-family: "Pacifico", cursive; }
+  .my_btn :hover {
+    color: #264d00;
+    outline: none; }
+  .my_btn :active {
+    outline: none;
+    text-decoration: none; }
+
+.my_btn_link {
+  display: inline;
+  color: black;
+  background-color: transparent;
+  border: none;
+  font-family: "Pacifico", cursive;
+  font-style: italic; }
+  .my_btn_link :hover {
+    color: #264d00;
+    outline: none; }
+  .my_btn_link :active {
+    outline: none;
+    text-decoration: none; }
+
+/* *** */
+/* home_page */
+#galery {
+  overflow: hidden;
+  position: relative;
+  left: 0;
+  top: 10px;
+  height: 340px;
+  z-index: 97; }
+
+#galery_button {
+  position: absolute;
+  top: 500px; }
+
+.albums_covers {
+  position: relative;
+  transform: translateX(-12px);
+  margin-bottom: 7px;
+  z-index: 2; }
+
+.img_frame {
+  overflow: hidden;
+  height: 150px;
+  width: 200px; }
+
+.album_img {
+  width: 200px;
+  border-radius: 2px; }
+  .album_img:hover {
+    transition: all 0.5s ease-out;
+    transform: scale(1.1);
+    z-index: 1; }
+
+.album_info {
+  position: absolute;
+  bottom: -10px; }
+  .album_info p {
+    color: white;
+    margin-left: 10px; }
+  .album_info .p_title {
+    font-size: 17px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10px; }
+  .album_info .p_author {
+    font-size: 10px;
+    font-weight: 600;
+    text-align: left; }
+  .album_info .span_date {
+    font-size: 10px;
+    font-weight: 100; }
+
+#users_comments {
+  overflow: scroll;
+  height: 400px;
+  display: none;
+  position: relative;
+  top: 0px;
+  color: #264d00; }
+
+.respond_div {
+  margin-top: 5px;
+  border-radius: 4px;
+  background-color: #193400;
+  color: white; }
+
+/* *** */
+/*add_travel_page*/
+.r1, .r2, .r3, .r4, .r5, .r6 {
+  /*display: none;*/
+  margin-bottom: 33px; }
+
+/***/
+/*input_form*/
+.data_input {
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #264d00; }
+  .data_input :focus {
+    border: none;
+    border-bottom: 1px solid #264d00;
+    outline: none; }
+
+.data_input_description {
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  color: #005c99;
+  font-size: 18px;
+  transform: translateY(-25px);
+  border: none;
+  border-bottom: 1px solid #264d00; }
+  .data_input_description :focus {
+    border: none;
+    border-bottom: 1px solid #264d00;
+    outline: none; }
+
+/* поля відправляють дані */
+.data_input_send {
+  position: absolute;
+  font-size: 5px;
+  border: none;
+  transition-duration: 1.5s;
+  transform: translateX(380px); }
+
+.data_input_small {
+  font-size: 3px; }
+
+.none {
+  transition-duration: 3.8s;
+  display: none; }
+
+/*label*/
+.label_form {
+  font-weight: 100;
+  color: #264d00;
+  font-size: 16px;
+  opacity: 0.6;
+  transform: translateY(7px); }
+
+.label_form_description {
+  font-weight: 100;
+  color: #264d00;
+  font-size: 16px;
+  opacity: 0.6;
+  transform: translateY(41px); }
+
+/* label animation */
+.label_form_focus {
+  color: black;
+  font-weight: 100;
+  font-size: 10px;
+  opacity: 0.9;
+  transition-duration: 0.8s;
+  transform: translateY(-17px); }
+
+.label_form_small {
+  font-size: 1px; }
+
+.label_form_send {
+  color: #264d00;
+  transition-duration: 1.3s;
+  transform: translateX(400px); }
+
+.button_small {
+  height: 3px; }
+
+.button_send {
+  transition-duration: 2.5s; }
+
+/***/
+/* add_respond_page */
+#label_textarea {
+  position: absolute;
+  transition: translateY(100px); }
+
+#label_datepicker {
+  position: absolute;
+  transition: translateY(-20px); }
+
+.data_input_respond {
+  transition: translateY(-20px);
+  background-color: transparent;
+  color: #005c99;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #264d00; }
+  .data_input_respond :focus {
+    border-bottom: 1px solid #264d00;
+    outline: none; }
+
+/***/
+/* show_photo_page */
+#show_travel_info {
+  display: none;
+  position: absolute;
+  top: 135px; }
+
+#close_travel_info {
+  position: absolute;
+  top: 230px; }
+
+.author_frame {
+  overflow: hidden;
+  height: 70px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.author_img {
+  transition: 0.3s; }
+  .author_img:hover {
+    transform: scale(1.5); }
+
+#photo_section {
+  position: relative;
+  top: -15px; }
+
+.photo_div_small {
+  margin-right: 10px; }
+
+#tweets_section {
+  overflow: scroll;
+  height: 380px;
+  position: absolute;
+  top: 230px;
+  right: 0; }
+
+.img_big {
+  position: relative;
+  left: 0px;
+  height: 420px; }
+
+#read_travel_description {
+  display: none;
+  position: absolute;
+  left: -77px;
+  top: 123px; }
+
+.travel_description {
+  display: none;
+  position: absolute;
+  top: 225px;
+  left: 50px;
+  margin-top: 12px;
+  font-family: "Pacifico", cursive;
+  color: #264d00; }
+
+#close_description {
+  transform: scale(4); }
+  #close_description :hover {
+    transition: 2sec;
+    transform: rotate(1 turn); }
+
+/***/
+/* trip_дшіе_page */
+.trip_div {
+  background-color: #ecf9f2; }
+
+/***/
+/* to_join_the_trip_page */
+#to_join_form {
+  display: none; }
+
+.trip_info {
+  font-family: "Open Sans", sans-serif;
+  color: #264d00; }
+
+.p_trip_info {
+  text-alight: right; }
+
+/***/
+/* plan_trip_page */
+#trip_description_label {
+  position: absolute;
+  transition: translateY(150px); }
+
+/***/
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="row">
+		
+		<div class="col-xs-4 col-xs-offset-1 trip_info">
+		<hr class="hr">
+			{% for entry in cur_trip %}
+				<h4 class="respond_title text-right">{{ entry.trip_point }}</h4>
+				<hr>
+				<p class="p_trip_info text-right">{{ entry.trip_description }}</p>
+				<p class="p_trip_info text-right">Виїзд - {{ entry.departure_date }}</p>
+				<p class="p_trip_info text-right">Повернення - {{ entry.date_of_arrival }}</p>
+				<p class="p_trip_info text-right">Можлива кількість місць - {{ entry.number_of_seats }}</p>
+				<p class="p_trip_info text-right" id="seats_info_p">Вільних місць - {{ seats_info }}</p>
+				<input id="seats_info_input" type="hidden" value="{{ seats_info }}">
+				<p class="p_trip_info text-right">Організовує поїздку - <a href="{% url 'profile' %}" class="a">{{ entry.trip_organizer }}</a></p>
+			{% endfor %}
+		</div>
+
+		<div class="col-xs-2 message">
+			{% block status_message %}
+		    	{% if request.GET.status_message %}
+		       		<div class="alert alert-warning" role="alert"><p class="p_message">{{ request.GET.status_message }}</p>
+		       		</div>
+		    	{% endif %}
+   			{% endblock %}
+		</div>
+
+		<div class="col-xs-4">
+		<hr class="hr">
+
+			<div class="trip_info">
+
+				{% if tourist_list %}
+					<h4 class="respond_title">Учасники поїздки:</h4><hr>
+						{% for entry in tourist_list %}
+							<p class="text-left">{{ entry.first_name }} {{ entry.last_name }}</p>
+							<p class="text-left">{{ entry.mail }}</p>
+							<input type="hidden" value="{{ entry.first_name }}">
+							<hr>
+						{% endfor %}
+				
+				{% else %}
+					<p class="respond_title text-left">Ще ніхто не записувався!</p>
+				{% endif %}
+
+			</div>
+
+		</div>
+		
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-4 col-xs-offset-7">
+
+				<form action="{% url 'to_join_the_trip' %}"
+						method="post" 
+						enctype="multipart/form-data"
+						role='form'
+						id="to_join_form" 
+						>
+						{% csrf_token %}
+
+					<div class="row r1">
+						<div class="{% if errors.first_name %}has-error{% endif %}">
+							<span class="help-block">
+								<label for="first_name_input"
+								id="first_name_label" class="label_form">Ім'я</label>
+								<input type="text" class="data_input"
+									id="first_name_input"
+									name="first_name"
+									value="{{ request.POST.first_name }}">
+								{{ errors.first_name }}
+							</span>
+						</div>
+					</div>
+
+					<div class="row r2">
+						<div class="{% if errors.last_name %}has-error{% endif %}">
+							<span class="help-block">
+								<label for="last_name_input" 
+									id="last_name_label"class="label_form">Прізвище</label>
+									<input type="text" class="data_input"
+									id="last_name_input"
+									name="last_name"
+									value="{{ request.POST.last_name }}">
+								{{ errors.last_name }}
+							</span>
+						</div>
+					</div>
+
+
+					<div class="row r3">
+
+						<button name="send_button" id="send_button"
+								class="my_btn" type="submit">
+								Надіслати заявку
+						</button>
+
+						<button name="cancel_button" id="cancel_button"
+								class="my_btn_link" type="submit">
+								Скасувати
+						</button>
+
+					</div>
+
+				</form>
+			<hr class="hr">
+		</div>
+		
+	</div>
+
+
+{% endblock content %}

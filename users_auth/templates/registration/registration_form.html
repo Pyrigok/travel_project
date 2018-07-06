@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+<link rel="stylesheet" type="text/css" href="../../../travel_app/static/css/style.css">
+{% block title %}Форма реєстрації{% endblock title %}
+
+{% block status_message %}
+  {% if form.errors %}
+    <div class="alert alert-warning" role="alert">
+    Введіть коректні дані {{ form.non_field_errors }}</div>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+<form action="{% url "registration_register" %}" method="post">
+
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{% url 'home' %}" />
+
+  <div class="form-group">
+
+    <input type="text" class="form-control" id="login" value=""
+           name="username" 
+           placeholder='Ваш логін'/>
+    <span class="help-block">{{ form.errors.username.as_text }}</span>
+  </div>
+
+  <div class="form-group">
+    
+    <input type="email" class="form-control" id="email" value=""
+           name="email" 
+           placeholder='Ваш електронна пошта'/>
+    <span class="help-block">{{ form.errors.email.as_text }}</span>
+  </div>
+
+  <div class="form-group">
+
+    <input type="password" class="form-control" id="password" value=""
+           name="password1" 
+           placeholder='Ваш пароль'/>
+    <span class="help-block">{{ form.errors.password1.as_text }}</span>
+  </div>
+
+  <div class="form-group">
+    
+    <input type="password" class="form-control" id="password-confirm" value=""
+           name="password2" 
+           placeholder='Повторіть пароль'/>
+    <span class="help-block">{{ form.errors.password2.as_text }}</span>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Зареєструватись</button>
+
+</form>
+
+{% endblock content %}

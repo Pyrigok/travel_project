@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="container">
+	
+		<div class="row">
+			<div class="col-xs-3 col-xs-offset-1">
+				
+				<form action="{% url 'add_travel' %}"
+						method="post" 
+						enctype='multipart/form-data'
+						role='form'
+						class="form_travel"
+						id="form_travel_id">
+						{% csrf_token %}
+					
+					<div class="row r1">					
+
+						<div class="{% if errors.author_photo %}has-error{% endif %}">
+
+							<label for="author_photo"
+								class="label_form"
+								id="label_photo">Фото автора</label>
+							<span class="help-block">
+								<input class='data_input' type="file" name="author_photo" id="author_photo"
+								value="{{ request.FILES.author_photo }}"
+								id="input_photo" 
+								 
+								>{{ errors.author_photo }}</span>
+							
+						</div>
+
+					</div>
+
+					<div class="row r2">
+
+						<div class='{% if errors.travel_name %}has-error{% endif %}'>
+							<span class="help-block">
+								<label id="label_travel_name"
+										class="label_form"
+										 for="input_travel_name">Назва подорожі</label>
+
+								<input class='data_input'
+										
+										type="text" name="travel_name"
+									id="input_travel_name" value="{{ request.POST.travel_name }}" 
+									placeholder=""
+									 >{{ errors.travel_name }}</span>
+						</div> 
+
+					</div>
+
+					<div class="row r3">
+
+						<div class=''>
+							<label id="label_travel_route"
+							class="label_form"
+							 for="input_travel_route"
+							 >Маршрут, довжина у км.</label>
+							<input class='data_input'
+									type="text" name="travel_route"
+									id="input_travel_route" value="{{ request.POST.travel_route }}" 
+									placeholder="">
+						</div> 
+
+					</div>
+
+					<div class="row r4">					
+
+						<div class=" {% if error.travel_description %}has-error{% endif %}">
+
+							<label for="input_travel_description"
+									class="label_form_description"
+									id="label_description">Опис подорожі</label>
+							<span class="help-block">
+								<textarea class='data_input_description'
+									type="text" name="travel_description"
+									id="input_travel_description"
+									cols='80'
+									rows='2'
+									value="{{ request.POST.travel_description }}">
+								</textarea>{{ errors.travel_description }}</span>
+							
+						</div> 
+
+ 					</div>
+	
+					<div class="row r5">					
+
+						<div class=" {% if error.travel_cover %}has-error{% endif %}">
+
+							<label for="travel_cover"
+									class="label_form"
+									id="label_cover">Обкладинка альбому</label>
+							<span class="help-block">
+								<input class='data_input' type="file" name="travel_cover" id="travel_cover"
+									value="{{ request.FILES.travel_cover }}">{{ errors.travel_cover }}</span>
+							
+						</div> 
+
+ 					</div>
+
+
+					<div class="row r6">
+
+							<button class="my_btn"
+									name="send_button" 
+									type="submit"
+									id="send_button">Опублікувати</button>
+	
+							<button class="my_btn_link"
+									name="cancel_button"
+									id="cancel_button" 
+									type="submit">Скасувати</button>
+						
+					</div>					
+
+				</form>
+
+			</div>
+
+			<div class="col-xs-2 col-xs-offset-2 message">
+				{% block status_message %}
+					      {% if request.GET.status_message %}
+					       	<div class="alert alert-warning" role="alert"><p class="p_message">{{ request.GET.status_message }}</p>
+					       	</div>
+					      {% endif %}
+       			{% endblock %}
+			</div>
+
+		</div>
+	</div>
+
+{% endblock content %}

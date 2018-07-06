@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="col-xs-4 col-xs-offset-4 trip_list">
+								<hr class="hr">
+
+			<!-- {% for entry in trip_list %}
+				<div class="trip_div">
+					 <p class="list-group-item trip_item">{{ entry.trip_point }}. Виїзд - {{ entry.departure_date }}
+					<a href="{% url 'to_join_the_trip' %}" class="a">Подати заявку</a></p>
+					 <input type="hidden" value="{{ entry.id }}">
+				</div><br>
+			{% endfor %} -->
+
+			{% for entry in TRIPS %}
+				<div class="trip_div text-center">
+				<a href="{% url 'to_join_the_trip' %}" class="a">
+					 <span class="respond_title">{{ entry.point }}. Виїзд - {{ entry.there }}</span>
+					 <input type="hidden" value="{{ entry.id }}">
+				</a>
+					
+				</div><br>
+			{% endfor %}
+
+		</div>
+
+	</div>
+
+
+{% endblock content %}

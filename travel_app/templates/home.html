@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="row">
+		
+		<div class="col-xs-9 " id="galery">
+		<hr class="hr">
+							
+			{% for album in ALBUMS %}
+		
+				<div class="col-xs-3 albums_covers">
+					
+					<a href="{% url 'show_photo' %}"  title="{{album.title}}" >
+						<div class="img_frame">
+							<img class=" album_img" src="{{ album.cover_url }}" alt=""
+								height="150px" width="200px" />
+						</div>
+					</a>
+					<input type="hidden" value="{{ album.id }}" />
+					
+					<div class="album_info">
+						<p class="p_title">{{ album.title }}</p>					
+						<p class="p_author">{{ album.author }} -<span class="span_date"> {{ album.date }}</span></p>
+
+					</div>
+
+				</div>
+
+			{% endfor %}
+		
+		</div>
+	
+		<div class="col-xs-3 col-xs-offset-3 text-center" id="galery_button">
+			<a class="btn-link a">Показати ще<hr class="hr"></a>
+		</div>
+
+
+		<div class="col-xs-3" id="users_comments">
+		<hr class="hr">
+	
+				<h4 class="respond_title text-center"><strong>{{ respond_count }}   {{ respond }}</strong></h4>
+			
+
+			{% for entry in responds %}
+			
+				<div class="col-xs-12 respond_div text-center">	
+					<p class="p_author">{{ entry.respond_author }} - <span class="span_date">{{ entry.respond_created_on }}</span></p>
+				
+					<p class="p_text">{{entry.respond_text}}</p>
+
+				</div>
+
+			{% endfor %}
+
+		
+		</div>
+
+	</div>
+
+	<div class="row">
+	</div>
+
+{% endblock content %}

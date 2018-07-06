@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="container ">
+
+		<div class="row">
+		
+			<div class="col-xs-3 col-xs-offset-1">
+
+				<form action="{% url 'add_respond' %}" method="post"
+						enctype="multipart/form-data"
+						role='form' class="">
+						{% csrf_token %}
+
+
+					<div class="row">
+
+						<div class="{% if errors.respond_text %}has-error{% endif %}">
+							<label for="respond_text"
+									class="label_form"
+									id="label_textarea">Ваш відгук</label>
+							<span class="help-block">
+								<textarea name="respond_text" id="respond_text" cols="80" rows="2"
+								placeholder="" class="data_input_respond" 
+								value='{{ request.POST.respond_text }}'
+								></textarea>
+							{{ errors.respond_text }}
+							</span>
+
+						</div>
+
+					</div>
+
+					<div class="row" style="margin-top: 30px;">
+
+						<button class="my_btn"
+								name="send_button"
+								type="submit">Опублікувати</button>
+
+						<button class="my_btn_link"
+								name="cancel_button"
+								type="submit">Скасувати</button>
+
+					</div>
+
+
+				</form>
+
+			</div>	
+		
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2 col-xs-offset-4">
+				{% if request.GET.status_message %}
+					<div class="alert alert-warning" role="alert"><p class="p_message">{{ request.GET.status_message }}</p>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+
+	</div>
+
+
+{% endblock content %}

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="row">
+
+			<div class="col-xs-6">
+				<p>Запланувати поїздку</p>
+				<form action="{% url 'plan_trip' %}"
+						method="post"
+						enctype="multioart/form-data"
+						id='plan_trip_form'>
+							{% csrf_token %}
+						
+					<div class="row r1">
+						<div class=" {% if errors.trip_point %}has-error{% endif %}">
+							<span class="help-block">
+							<label for="trip_point_input"
+								id="trip_point_label" 
+								class="label_form">
+									Куди їдемо?
+								</label>
+							<input type="text"
+								id="trip_point_input" 
+								class="data_input"
+								name="trip_point"
+								value="{{ request.POST.trip_point }}">
+							{{ errors.trip_point }}</span>
+						</div>
+					</div>
+
+					<div class="row r2">
+						<div class=" {% if errors.trip_description %}has-error{% endif %}">
+							<span class="help-block">
+							<label for="trip_description_input"
+								id="trip_description_label"
+								class="label_form"
+								>
+									Опис
+								</label>
+							<textarea type="text"
+								id="trip_description_input" 
+								name="trip_description"
+								cols="80" rows="2"
+								value="{{ request.POST.trip_description }}"
+								class="data_input_respond"
+								 
+								></textarea>
+							{{ errors.trip_description }}</span>
+						</div>
+					</div>
+
+					<div class="row r3">
+						<div class=" {% if errors.number_of_seats %}has-error{% endif %}">
+							<span class="help-block">
+							<label for="number_of_seats_input"
+								id="number_of_seats_label" 
+								class="label_form">
+									Кількість можливих місць
+								</label>
+							<input type="text"
+								id="number_of_seats_input" 
+								class="data_input"
+								name="number_of_seats"
+								value="{{ request.POST.number_of_seats }}">
+							{{ errors.number_of_seats }}</span>
+						</div>
+					</div>
+
+					<div class="row r4">
+						<div class=" {% if errors.departure_date %}has-error{% endif %}" style="position: relative;">
+							<span class="help-block">
+							<label for="departure_date_input"
+								id="departure_date_label" 
+								class="label_form">
+									Дата виїзду
+								</label>
+							<input type="text"
+								class="dateinput data_input"
+								id="departure_date_input" 
+								name="departure_date"
+								value="{{ request.POST.departure_date }}">
+							{{ errors.departure_date }}</span>
+						</div>
+					</div>
+
+					<div class="row r5">
+						<div class=" {% if errors.date_of_arrival %}has-error{% endif %}"
+						style="position: relative;">
+							<span class="help-block">
+							<label for="date_of_arrival_input"
+								id="date_of_arrival_label" 
+								class="label_form">
+									Дата приїзду
+								</label>
+							<input type="text"
+								id="date_of_arrival_input" 
+								class="dateinput data_input"
+								id="date_of_arrival_input" 
+								name="date_of_arrival"
+								value="{{ request.POST.date_of_arrival }}">
+							{{ errors.date_of_arrival }}</span>
+						</div>
+					</div>
+
+					<div class="row r6" style="margin-top: 30px;">
+						<button class="my_btn"
+							name="send_button"
+							type="submit">
+							Опублікувати							
+						</button>
+					
+						<button class="my_btn_link"
+							name="cancel_button"
+							type="submit">Скасувати
+						</button>
+					</div>
+
+				</form>
+			</div>
+
+			<div class="col-xs-2">
+							{% if request.GET.status_message %}
+								<div class="alert alert-warning" role="alert"><p class="p_message">{{ request.GET.status_message }}</p>
+								</div>
+							{% endif %}
+						</div>
+
+
+			
+		
+	</div>
+
+	<div class="row">
+		
+	</div>
+
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Дані користувача{% endblock title %}
+
+{% block meta_title %} {{ user.get_full_name|default:user.username }} {% endblock meta_title %}
+
+{% block content %}
+
+	<table class="table table-striped">
+	
+		{% if user.username %}
+			
+			<tr>
+				<td>Логін</td>
+				<td>{{ user.username }}</td>
+			</tr>
+
+		{% endif %}
+
+		{% if user.email %}
+			
+			<tr>
+				<td>Пошта</td>
+				<td>{{ user.email }}</td>
+			</tr>
+
+		{% endif %}
+
+		{% if user.password %}
+			
+			<tr>
+				<td>Пароль</td>
+				<td>{{ user.password }}</td>
+			</tr>
+
+		{% endif %}
+
+		{% if user.date_joined %}
+	    
+	    	<tr>
+	    		<td>Дата приєднання</td>
+	    		<td>{{ user.date_joined }}</td>
+	    	</tr>
+
+	    {% endif %}
+
+	</table>
+
+{% endblock %}

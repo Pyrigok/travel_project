@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="row travel_info">
+
+		<div class="col-xs-2" id="close_travel_info">
+			<a href="#" class="a" >Переглянути фото</a><hr class="hr" id="close_travel_info_hr">
+		</div>
+
+		
+
+		<div class="row">
+
+			<div class="col-xs-3 col-xs-offset-2">
+				{% if request.GET.status_message %}
+					<div class="alert alert-warning" role='alert'>
+						<p class="p_message">{{request.GET.status_message }}</p>
+					</div>
+				{% endif %}
+			</div>
+
+			{% if user.is_authenticated %}
+
+				<div class="col-xs-2  text-center">
+					<a href="{% url 'add_photo' %}" class="a">Додайте фото<hr class="hr"></a>
+				</div>
+
+			{%endif%}
+
+		</div>
+
+		{% for entry in author_photo %}
+
+			<div class="row">
+
+				<div class="col-xs-3 col-xs-offset-2 text-center">
+
+				 	<p><strong>Подорож</strong> - <span class='p_title'>{{ entry.travel_name }}</span>. <span class="span_date">{{ entry.travel_route }}</span></p><hr>
+
+				</div>
+
+				<div class="col-xs-3 col-xs-offset-3 text-center">
+
+				 	<p><strong>Створено</strong> - <span class="span_date">{{ entry.travel_created_on }}</span></p><hr>
+
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-xs-4 col-xs-offset-4 text-center ">
+
+					<div class="author_frame ">
+						<img src="{{ entry.author_photo.url }}" alt="Автор альбому" height="70" width="50"
+						title="{{ entry.travel_author }}" 
+						class='author_img img-rounded'>
+					</div>
+
+					<p><strong>Автор альбому</strong> - 
+						<a href="{% url 'profile' %}" class="a">
+							<span class="p_author">{{ entry.travel_author }} </span>
+						</a>
+						
+					</p><hr>
+
+				</div>
+
+			</div>
+
+
+		{% endfor %}
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-xs-3" id="tweets_section">
+		<hr class="hr"> 
+			<h4 class="respond_title"><strong>Відгуки з Twitter</strong></h4>
+			
+			<ul id="home_tweets">
+				{% for tweet in tweets.tweets %}
+					<div class="col-xs-12 respond_div text-center">
+						<li class="tweettext">{{ tweet.status }}</li>
+						<li class="tweettime">{{ tweet.date }}</li>
+					</div>
+				{% endfor %}
+			</ul>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-1">
+		<hr class="hr">
+			<div class="img_big">
+			        
+		        <div class="fotorama"
+		        		id="img_big"
+		        		data-navposition="top" 
+		                data-width="100%"
+		                data-nav="thumbs"
+		                data-allowfullscreen="true" 
+		                data-loop="true" 
+		                data-autoplay="true"
+		          >
+					{% for entry in photo %}
+					
+						<img src="{{ entry.photo.url }}" alt=""
+							title="{{ entry.comment }}
+									{{ entry.photo_created_on }}">	
+					
+					{% endfor %}
+		        
+		        </div>
+
+	        </div>
+		
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-7 travel_description" id="travel_description">
+			<span id="close_description" class="a">&times;</span>
+			<p class="text-center">
+				{% for entry in author_photo %}
+					<h4 class="respond_title text-center"><strong>{{ entry.travel_name}}</strong></h4>
+				{% endfor %}
+			</p>
+			<p class="text-center">{{ trav_description }}</p>
+		</div>
+		<div class="col-xs-3" id="read_travel_description">
+			<a href="#" class="a">Почитати опис подорожі<hr class="hr"></a>		
+		</div>
+		<div class="col-xs-2 col-xs-offset-9" id="show_travel_info">
+			<a href="#" class="a">Показати інформацію <hr class="hr"></a>
+		</div>
+	</div>
+		 
+{% endblock content %}
