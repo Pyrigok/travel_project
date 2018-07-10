@@ -149,10 +149,6 @@ $(document).ready(function() {
 	});
 
 
-	$('#datetimepicker').focus(function() {
-		$('#label_datepicker').addClass('label_form_focus')
-	});
-
 
 });
 /* *** */
@@ -208,8 +204,21 @@ $(document).ready(function() {
 
 /*стилі форми*/
 $(document).ready(function() {
+	$('#trip_point_input').focus()
 
-	$('#trip_point_input').focus(function() {
+	$('#trip_point_input').keydown(function() {
+		$('#trip_point_label').addClass('label_form_focus')
+	});
+
+	$('#trip_description_input').keydown(function() {
+		$('#trip_description_label').addClass('label_form_focus')
+	});
+
+	$('#number_of_seats_input').keydown(function() {
+		$('#number_of_seats_label').addClass('label_form_focus')
+	});
+
+	$('#trip_point_input').click(function() {
 		$('#trip_point_label').addClass('label_form_focus')
 	});
 
@@ -284,11 +293,4 @@ $(document).ready(function() {
 
 
 
-		/* plan_trip_page */
-
-	$(document).ready(function() {
-		$('#trip_point_input').focus();
-	});
-
-/* *** */
 
