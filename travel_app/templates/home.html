@@ -88,7 +88,7 @@
 				id="prev_button">
 			
 				{% if all_albums.has_previous %}
-					<a href="?page={{ all_albums.previous_page_number }}" class="my_btn a">Попередня<hr class="hr"></a>
+					<a href="?page={{ all_albums.previous_page_number }}" class="paginator_btn">Попередня<hr class="hr"></a>
 				{% endif %}
 			
 			</div>
@@ -97,7 +97,7 @@
 				id="next_button">
 
 				{% if all_albums.has_next %}
-					<a href="?page={{all_albums.next_page_number}}" class="my_btn a">Наступна<hr class="hr"></a>
+					<a href="?page={{all_albums.next_page_number}}" class="paginator_btn">Наступна<hr class="hr"></a>
 				{% endif %}
 			
 			</div>

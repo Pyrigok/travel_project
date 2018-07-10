@@ -225,6 +225,20 @@ p {
   background-color: #193400;
   color: white; }
 
+.paginator_btn {
+  display: inline;
+  color: black;
+  background-color: transparent;
+  border: none;
+  font-family: "Pacifico", cursive; }
+  .paginator_btn:hover {
+    color: #264d00;
+    outline: none;
+    text-decoration: none; }
+  .paginator_btn:active {
+    outline: none;
+    text-decoration: none; }
+
 /* *** */
 /*add_travel_page*/
 /***/

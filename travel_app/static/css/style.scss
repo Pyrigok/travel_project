@@ -292,6 +292,25 @@ p{
 	color: white;	
 }
 
+.paginator_btn{
+	display: inline;
+	color: black;
+	background-color: transparent;
+	border: none;
+	font-family: $pacifico;
+
+	&:hover{
+		color: $base_green;
+		outline: none;
+	text-decoration: none;
+		
+	}	
+	&:active{
+	outline: none;
+	text-decoration: none;
+	}
+}
+
 
 
 
