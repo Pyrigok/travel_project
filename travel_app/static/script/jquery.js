@@ -14,16 +14,17 @@ $(document).ready(function() {
 
 /* *** */
 
+
 	/*home_page*/
 $(document).ready(function() {
 
 /*Ефекти обкладинок альбомів*/
 	$('div:has(img):nth-child(even)').slideDown(1000);
 	$('div:has(img):nth-child(odd)').fadeIn(3500);
-	$('div:has(p.p_text)').fadeIn(15000);
+	$('div:has(p.p_text)').fadeIn(5000);
 	
 /*Частково прихована галерея*/
-	$('#galery_button').click(function() {
+/*	$('#galery_button').click(function() {
 
 		let height =$('#galery').height();
 		let position = $('#galery_button').position();
@@ -39,10 +40,9 @@ $(document).ready(function() {
 		$('#galery').css({'height': new_height})
 		&& $(this).css({'top': new_top})
 		&& $('#users_comments').css({'height': new_comments_height});
-/*		&& $(window).scrollTop(new_scroll);
-*/	
-});
 
+});
+*/
 
 });
 /* *** */
@@ -128,13 +128,6 @@ $(document).ready(function() {
 		
 	});
 
-/*	$input_travel_name.focus(function() {
-		$label_travel_name.animate({'font-size': '10px', 
-									'font-weight': '100',
-									'color': '#ff4d4d',
-									}, 1000);
-		});*/
-	
 
 });
 /* *** */
@@ -260,6 +253,8 @@ $(document).ready(function() {
 
 /* *** */
 
+
+
 		/*to_join_the_trip_page*/
 
 	$(document).ready(function() {
@@ -285,10 +280,8 @@ $(document).ready(function() {
 
 	});
 
-
-
-
 /* *** */
+
 
 
 		/* plan_trip_page */

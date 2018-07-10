@@ -31,6 +31,7 @@ def get_albums(request):
 			'selected': current_album and current_album.id == album.id and True or False
 			})
 
+
 	return albums
 
 #визначення поточної подорожі

@@ -75,29 +75,39 @@
 
 					<div class="row r1">
 						<div class="{% if errors.first_name %}has-error{% endif %}">
-							<span class="help-block">
-								<label for="first_name_input"
-								id="first_name_label" class="label_form">Ім'я</label>
-								<input type="text" class="data_input"
+							
+							<label for="first_name_input"
+								id="first_name_label" class="label_form">Ім'я
+							</label>
+
+							<input type="text" class="data_input"
 									id="first_name_input"
 									name="first_name"
 									value="{{ request.POST.first_name }}">
+
+							<span class="help-block">
 								{{ errors.first_name }}
 							</span>
+							
 						</div>
 					</div>
 
 					<div class="row r2">
 						<div class="{% if errors.last_name %}has-error{% endif %}">
+							
+							<label for="last_name_input" 
+								id="last_name_label"class="label_form">Прізвище
+							</label>
+
+							<input type="text" class="data_input"
+								id="last_name_input"
+								name="last_name"
+								value="{{ request.POST.last_name }}">
+
 							<span class="help-block">
-								<label for="last_name_input" 
-									id="last_name_label"class="label_form">Прізвище</label>
-									<input type="text" class="data_input"
-									id="last_name_input"
-									name="last_name"
-									value="{{ request.POST.last_name }}">
 								{{ errors.last_name }}
 							</span>
+
 						</div>
 					</div>
 

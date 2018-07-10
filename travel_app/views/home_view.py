@@ -1,5 +1,7 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render, render_to_response
 from django.template import RequestContext
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from ..models import Travels_Model
 from ..models import Respond_Model
@@ -39,5 +41,20 @@ def home (request):
 	else:
 		respond = 'коментарів'
 
-	context = {'responds': responds, 'respond_count': respond_count, 'respond': respond}
+
+
+	all_albums = Travels_Model.objects.all()
+	paginator = Paginator(all_albums, 8)
+
+	page=request.GET.get('page')
+	try:
+		all_albums=paginator.page(page)
+	
+	except PageNotAnInteger:
+		all_albums = paginator.page(1)
+	
+	except EmptyPage:
+		all_albums=paginator.page(paginator.num_pages)
+
+	context = {'all_albums': all_albums, 'responds': responds, 'respond_count': respond_count, 'respond': respond}
 	return render_to_response('home.html', context, context_instance=RequestContext(request))

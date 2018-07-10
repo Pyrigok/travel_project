@@ -47,6 +47,5 @@ $(document).ready(function() {
 	initAlbumSelector();
 	initTripSelector();
 	initDateFields();
-	/*initGalery()*/
-	/*letterBacklighting();*/
+
 });

@@ -15,13 +15,23 @@
 			{% endfor %} -->
 
 			{% for entry in TRIPS %}
+
 				<div class="trip_div text-center">
-				<a href="{% url 'to_join_the_trip' %}" class="a">
-					 <span class="respond_title">{{ entry.point }}. Виїзд - {{ entry.there }}</span>
-					 <input type="hidden" value="{{ entry.id }}">
-				</a>
-					
-				</div><br>
+
+					<a href="{% url 'to_join_the_trip' %}" class="a">
+						<span class="respond_title">
+							{{ entry.point }}. 
+						</span>
+					</a>
+					<br>
+					<span class="respond_title text-right">
+						 Виїзд - {{ entry.there }}
+					</span>
+					<input type="hidden" value="{{ entry.id }}">
+									
+				</div>
+				<br>
+
 			{% endfor %}
 
 		</div>
