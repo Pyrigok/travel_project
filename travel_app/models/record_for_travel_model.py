@@ -35,4 +35,4 @@ class Record_For_Travel_Model(models.Model):
 		verbose_name = u'Дата заявки')
 
 	def __str__(self):
-		return u'%s, %s %s, %s, %s' %(self.trip_name, self.first_name, self.last_name, self.phone, self.date_of_join)
+		return u'%s, %s %s, %s, %s' %(self.trip_name, self.first_name, self.last_name, self.mail, self.date_of_join)

@@ -8,6 +8,8 @@ from django.core.urlresolvers import reverse
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
+import datetime
+
 from ..models import Trip_Description_Model
 from ..models import Record_For_Travel_Model
 
@@ -37,23 +39,45 @@ def add_trip(request):
 			else:
 				data['trip_description'] = trip_description
 
+
 			departure_date = request.POST.get('departure_date', '').strip()
 			if not departure_date:
 				errors['departure_date'] = u'Вкажіть дату виїзду'
 			else:
-				data['departure_date'] = departure_date
+				dep_date = datetime.date(int(departure_date.split('-')[0]), int(departure_date.split('-')[1]), int(departure_date.split('-')[2]))
+
+				current_date = datetime.date.today()
+			
+				current_difference = str(dep_date - current_date).split()[0]
+			
+				if (str(dep_date) == str(current_date)) or int(current_difference) > 0:
+					data['departure_date'] = departure_date
+				else:
+					errors['departure_date'] = u'Вкажіть коректну дату!'
+
 
 			date_of_arrival = request.POST.get('date_of_arrival', '').strip()
 			if not date_of_arrival:
-				errors['date_of_arrival'] = u'Вкажіть дату приїзду'
+				errors['date_of_arrival'] = u'Вкажіть дату приїзду!'
 			else:
-				data['date_of_arrival'] = date_of_arrival
+				arr_date = datetime.date(int(date_of_arrival.split('-')[0]), int(date_of_arrival.split('-')[1]), int(date_of_arrival.split('-')[2]))
 
+				date_difference = str(arr_date - dep_date).split()[0]
+
+				if (str(arr_date) == str(dep_date)) or int(date_difference) > 0:
+					data['date_of_arrival'] = date_of_arrival
+					
+
+				else:
+					errors['date_of_arrival'] = u'Вкажіть коректну дату!'
+				
 			number_of_seats = request.POST.get('number_of_seats', '').strip()
 			if not number_of_seats:
-				errors['number_of_seats'] = u'Вкажіть кількість можливих місць'
-			else:
+				errors['number_of_seats'] = u'Вкажіть кількість можливих місць!'
+			elif number_of_seats.isdigit():
 				data['number_of_seats'] = number_of_seats
+			else:
+				errors['number_of_seats'] = u'Введіть кількість у цифрах!'
 
 			if not errors:
 				new_trip = Trip_Description_Model(**data)

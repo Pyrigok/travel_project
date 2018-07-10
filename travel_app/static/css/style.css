@@ -167,10 +167,12 @@ p {
   height: 340px;
   z-index: 97; }
 
-#galery_button {
-  position: absolute;
-  top: 500px; }
-
+/*
+#galery_button{
+	position: absolute;
+	top: 500px;
+	float: center;
+}*/
 .albums_covers {
   position: relative;
   transform: translateX(-12px);

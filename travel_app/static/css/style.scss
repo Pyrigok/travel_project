@@ -214,13 +214,13 @@ p{
 	position: relative;
 	left: 0;
 	top: 10px;
-	height: 800px;/*340px;*/
+	height: 340px;
 	z-index: 97;
 }
 
 /*
 #galery_button{
-	position: relative;
+	position: absolute;
 	top: 500px;
 	float: center;
 }*/
@@ -291,6 +291,7 @@ p{
 	background-color: $green_darken;
 	color: white;	
 }
+
 
 
 
