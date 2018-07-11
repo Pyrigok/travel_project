@@ -23,29 +23,9 @@ $(document).ready(function() {
 	$('div:has(img):nth-child(odd)').fadeIn(3500);
 	$('div:has(p.p_text)').fadeIn(5000);
 	
-/*Частково прихована галерея*/
-/*	$('#galery_button').click(function() {
-
-		let height =$('#galery').height();
-		let position = $('#galery_button').position();
-		let top = position.top;
-		let x = 155;
-
-		new_height = height + x + 'px';
-		new_comments_height = height + x +100+ 'px';
-
-		new_top = top + x + 'px';
-		new_scroll = top;
-
-		$('#galery').css({'height': new_height})
-		&& $(this).css({'top': new_top})
-		&& $('#users_comments').css({'height': new_comments_height});
-
-});
-*/
-
 });
 /* *** */
+
 
 	/* add_travel_page */
 $(document).ready(function() {
@@ -71,11 +51,6 @@ $(document).ready(function() {
 	var $r5 = $('.r5');
 
 
-/*показати форму*/
-	
-	/*$('#add_data').click(function() {
-		$input_fields.slideDown(2000);
-	});*/
 
 /*приховати форму*/
 
@@ -190,10 +165,6 @@ $(document).ready(function() {
 		&& $('#read_travel_description').fadeIn(3000);
 	});
 
-/*Показати велике зображення*/
-	$('img').click(function() {
-		
-	});
 
 });
 
@@ -239,25 +210,6 @@ $(document).ready(function() {
 	});
 
 
-
-
-/*Відправка даних*/
-/*	if ($('.trip_point_input') != ''
-		&& $('#trip_description_input') != ''
-		&& $('#number_of_sets_input') != ''
-		&& $('#departure_date_input') != ''
-		&& $('#date_of_arrival_input') != '') {
-		$('#plan_trip_form').submit(function() {
-			$('#trip_point_input').click(function() {
-
-				$('#trip_point_label').
-
-			});
-		});
-	}
-
-	
-*/
 });
 
 /* *** */

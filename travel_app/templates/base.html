@@ -9,12 +9,9 @@
 		<!-- стилі -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 
-
 		<!-- стилі віджета календаря -->
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css">
-    
-		<!-- PORTAL_URL - змінна із процесора контексту.
-			Містить абсолютне посилання на корінь аплік. -->
+
     <link rel="stylesheet" href="../static/css/style.css">
 
 </head>
@@ -22,7 +19,13 @@
 	<header>
 		
 		<div class="row banner">
-			<div class="col-xs-12"><h1 style="text-align: center;"><a href="{% url 'home' %}" class="main_logo font-effect-destruction">ПроПодорожі</a></h1></div>
+			<div class="col-xs-12">
+				<h1 style="text-align: center;">
+					<a href="{% url 'home' %}"
+						class="main_logo font-effect-destruction">ПроПодорожі
+					</a>
+				</h1>
+			</div>
 		</div>
 
 		<div class="row nav">
@@ -123,9 +126,6 @@
 
 	<script src="../static/script/script.js"></script>
 	<script src='../static/script/jquery.js'></script>
-<!-- 
-	slick slider
-	<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>
- -->
+
 </body>
 </html>
