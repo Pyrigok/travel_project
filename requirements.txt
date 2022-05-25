@@ -36,7 +36,7 @@ pyasn1==0.1.9
 
 pycurl==7.43.0
 
-PyJWT==1.6.3
+PyJWT==2.4.0
 pyparsing==2.0.3
 
 
